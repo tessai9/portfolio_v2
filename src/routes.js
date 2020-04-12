@@ -1,5 +1,17 @@
-export const routes = [
-  { path: "/", component: "Home" },
-  { path: "/about-me", component: "AboutMe" },
-  { path: "/works", component: "Works" },
+import Home from "@/components/Home.vue"
+import Works from "@/components/Works.vue"
+
+let routes = [
+  {
+    path: "/",
+    name: "home",
+    component: Home
+  },
+  {
+    path: "/works",
+    name: "works",
+    component: Works
+  },
 ]
+
+export default routes

@@ -1,19 +1,17 @@
 <template>
   <div id="app">
     <HeaderBar />
-    <PortfolioContents />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import HeaderBar from "@/components/HeaderBar.vue"
-import PortfolioContents from "@/components/PortfolioContents.vue"
 
 export default {
   name: "App",
   components: {
     HeaderBar,
-    PortfolioContents
   }
 }
 </script>

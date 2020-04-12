@@ -8,13 +8,10 @@
       </div>
 
       <vs-navbar-item index="0">
-        <router-link :to="{ name: '/' }"><a>Home</a></router-link>
-      </vs-navbar-item>
-      <vs-navbar-item index="1">
-        <router-link :to="{ name: '/about-me' }"><a>About Me</a></router-link>
+        <router-link :to="{ name: 'home' }">Home</router-link>
       </vs-navbar-item>
       <vs-navbar-item index="2">
-        <router-link :to="{ name: '/works' }"><a>Works</a></router-link>
+        <router-link :to="{ name: 'works' }">Works</router-link>
       </vs-navbar-item>
     </vs-navbar>
   </div>

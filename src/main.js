@@ -2,14 +2,17 @@ import Vue from "vue"
 import Vuesax from "vuesax"
 import VueRouter from "vue-router"
 import App from "@/App.vue"
-import routes from "@/routes.js"
+import routesArray from "@/routes.js"
 import "vuesax/dist/vuesax.css"
 
 Vue.config.productionTip = false
 
 Vue.use(Vuesax)
+Vue.use(VueRouter)
+
 const router = new VueRouter({
-  routes
+  mode: 'history',
+  routes: routesArray,
 })
 
 new Vue({
