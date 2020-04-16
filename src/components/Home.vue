@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <vs-divider><h1>Profile</h1></vs-divider>
+    <vs-divider position="left"><h1>Profile</h1></vs-divider>
     <vs-row vs-type="flex" vs-justify="center" vs-align="center" class="profile_component">
       <vs-col vs-w="6" vs-justify="center">
         <p>兵庫県在住のエンジニアです。</p>
@@ -23,29 +23,46 @@
         <vs-image class="profile_image" :src="myProfileImage" hever="zoom"></vs-image>
       </vs-col>
     </vs-row>
-    <vs-divider><h1>Skills</h1></vs-divider>
+    <vs-divider position="left"><h1>Mainly Skills</h1></vs-divider>
     <vs-row>
-      <vs-images>
-        <vs-image :key="index" v-for="(skillImg, index) in skillImages.map" :src="skillImg" />
-      </vs-images>
+      <!-- <vs-images :key="categoryIndex" v-for="(category, categoryIndex) in skillCategories" class="skill_category">
+        <vs-divider><h3>{{category}}</h3></vs-divider>
+        <vs-image :key="imageIndex" v-for="(image, imageIndex) in skillImages[category]" :src="image" class="skill_image" />
+      </vs-images> -->
+      <vs-col vs-w="2"></vs-col>
+      <vs-col vs-w="6">
+        <vs-list>
+          <vs-list-header title="Fontend" color="success"></vs-list-header>
+          <vs-list-item title="Vue.js"></vs-list-item>
+          <vs-list-item title="Angular"></vs-list-item>
+          <vs-list-header title="Backend" color="danger"></vs-list-header>
+          <vs-list-item title="Ruby"></vs-list-item>
+          <vs-list-item title="PHP"></vs-list-item>
+          <vs-list-item title="Symfony"></vs-list-item>
+          <vs-list-item title="Ruby on Rails"></vs-list-item>
+          <vs-list-header title="Others" color="warning"></vs-list-header>
+          <vs-list-item title="Docker"></vs-list-item>
+          <vs-list-item title="C++"></vs-list-item>
+        </vs-list>
+      </vs-col>
+      <vs-col vs-w="2"></vs-col>
     </vs-row>
   </div>
 </template>
 
 <script>
+import skillImgs from "@/skillImages.js"
+
 const profImg = require("@/assets/profile_imgage.jpg")
-const skillImgs = require.context("@/assets/skills")
 
 export default {
   name: "Home",
   data() {
     return {
       myProfileImage: profImg,
-      skillImages: skillImgs
+      skillImages: skillImgs,
+      skillCategories: Object.keys(skillImgs),
     }
-  },
-  mounted() {
-    console.log(this.skillImages)
   },
 }
 </script>
