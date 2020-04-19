@@ -14,6 +14,17 @@
       <vs-col vs-w="2"></vs-col>
       <vs-col vs-w="6">
         <vs-list>
+          <!--
+          Skills.jsで定義したデータをv-forで表示する
+          <vs-list-header
+            :key="index"
+            v-for="categories in skills"
+            :title="skillCate"
+            class="skill_category"
+          >
+            <vs-list-item></vs-list-item>
+          </vs-list-header>
+        -->
           <vs-list-header class="skill_category" icon="phonelink" title="Fontend" color="success"></vs-list-header>
           <vs-list-item title="Vue.js"></vs-list-item>
           <vs-list-item title="Angular"></vs-list-item>
@@ -24,6 +35,7 @@
           <vs-list-item title="Ruby on Rails"></vs-list-item>
           <vs-list-header class="skill_category" icon="build" title="Others" color="warning"></vs-list-header>
           <vs-list-item title="Docker"></vs-list-item>
+          <vs-list-item title="Heroku"></vs-list-item>
           <vs-list-item title="C++"></vs-list-item>
         </vs-list>
       </vs-col>
@@ -34,7 +46,7 @@
 
 <script>
 import ProfileSentence from "@/components/ProfileSentence.vue"
-import skillImgs from "@/skillImages.js"
+import Skills from "@/Skills.js"
 
 const profImg = require("@/assets/profile_imgage.jpg")
 
@@ -43,8 +55,8 @@ export default {
   data() {
     return {
       myProfileImage: profImg,
-      skillImages: skillImgs,
-      skillCategories: Object.keys(skillImgs),
+      skills: Skills,
+      skillCategories: Object.keys(Skills),
     }
   },
   components: {
