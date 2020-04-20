@@ -1,6 +1,7 @@
 <template lang="html">
   <div>
     <vs-divider position="left"><h1>Profile</h1></vs-divider>
+    <!-- TODO: switch display of parts syde by side or vertical arrangement by window size -->
     <vs-row vs-type="flex" vs-justify="center" vs-align="center" class="profile_component">
       <vs-col vs-w="6" vs-justify="center">
         <ProfileSentence />
@@ -30,7 +31,7 @@
 <script>
 import ProfileSentence from "@/components/ProfileSentence.vue"
 import SkillList from "@/components/SkillList.vue"
-import Skills from "@/Skills.js"
+import SkillsStore from "@/SkillsStore.js"
 
 const profImg = require("@/assets/profile_imgage.jpg")
 
@@ -39,8 +40,8 @@ export default {
   data() {
     return {
       myProfileImage: profImg,
-      skills: Skills,
-      skillCategories: Object.keys(Skills),
+      skills: SkillsStore,
+      skillCategories: Object.keys(SkillsStore),
     }
   },
   components: {
