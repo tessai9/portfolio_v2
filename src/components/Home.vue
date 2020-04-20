@@ -13,31 +13,14 @@
     <vs-row>
       <vs-col vs-w="2"></vs-col>
       <vs-col vs-w="6">
-        <vs-list>
-          <!--
-          Skills.jsで定義したデータをv-forで表示する
-          <vs-list-header
-            :key="index"
-            v-for="categories in skills"
-            :title="skillCate"
-            class="skill_category"
-          >
-            <vs-list-item></vs-list-item>
-          </vs-list-header>
-        -->
-          <vs-list-header class="skill_category" icon="phonelink" title="Fontend" color="success"></vs-list-header>
-          <vs-list-item title="Vue.js"></vs-list-item>
-          <vs-list-item title="Angular"></vs-list-item>
-          <vs-list-header class="skill_category" icon="dns" title="Backend" color="danger"></vs-list-header>
-          <vs-list-item title="Ruby"></vs-list-item>
-          <vs-list-item title="PHP"></vs-list-item>
-          <vs-list-item title="Symfony"></vs-list-item>
-          <vs-list-item title="Ruby on Rails"></vs-list-item>
-          <vs-list-header class="skill_category" icon="build" title="Others" color="warning"></vs-list-header>
-          <vs-list-item title="Docker"></vs-list-item>
-          <vs-list-item title="Heroku"></vs-list-item>
-          <vs-list-item title="C++"></vs-list-item>
-        </vs-list>
+        <SkillList
+          :key="index"
+          v-for="(category, index) in skillCategories"
+          :category_name="category"
+          :color_name="skills[category].color_name"
+          :icon_name="skills[category].icon_name"
+          :tech_list="skills[category].techs"
+        />
       </vs-col>
       <vs-col vs-w="2"></vs-col>
     </vs-row>
@@ -46,6 +29,7 @@
 
 <script>
 import ProfileSentence from "@/components/ProfileSentence.vue"
+import SkillList from "@/components/SkillList.vue"
 import Skills from "@/Skills.js"
 
 const profImg = require("@/assets/profile_imgage.jpg")
@@ -60,7 +44,8 @@ export default {
     }
   },
   components: {
-    ProfileSentence
+    ProfileSentence,
+    SkillList,
   },
 }
 </script>
@@ -77,9 +62,5 @@ export default {
 .profile_image {
   width: 100%;
   max-width: 350px;
-}
-
-.skill_category {
-  font-size: 1.5rem;
 }
 </style>
