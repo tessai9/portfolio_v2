@@ -4,8 +4,8 @@ export default {
     {
       work_name: "Github",
       image_name: "@/assets/works/github.jpg",
-      // can this be?
-      // creating another vue template is better?
+      // TODO: can this be?
+      // TODO: creating another vue template is better?
       template: "<p>気になったことや個人的に開発したことをpushしています</p>"
                 +"<p>毎日草生やし連続〇日達成中！</p>",
     },

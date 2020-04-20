@@ -12,7 +12,7 @@
           </div>
           <div>
             <p>気になったことや個人的に開発したことをpushしています</p>
-            <p>毎日草生やし連続〇日達成中！</p>
+            <img src="https://grass-graph.moshimo.works/images/tessai9.png" />
           </div>
         </vs-card>
       </vs-col>
@@ -68,7 +68,8 @@ export default {
       community_image: require("@/assets/works/community.png"),
       yugenjigo_image: require("@/assets/works/yugenjigo.png"),
     }
-  }
+  },
+  methods: {}
 }
 </script>
 
@@ -77,6 +78,7 @@ export default {
   max-width: 360px;
 }
 .card_image_size {
-  max-height: 150px;
+  max-width: 360px;
+  /* max-height: 150px; */
 }
 </style>
