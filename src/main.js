@@ -4,7 +4,7 @@ import VueRouter from "vue-router"
 import App from "@/App.vue"
 import routesArray from "@/routes.js"
 import "vuesax/dist/vuesax.css"
-import 'material-icons/iconfont/material-icons.css';
+import "material-icons/iconfont/material-icons.css";
 
 Vue.config.productionTip = false
 
@@ -12,7 +12,7 @@ Vue.use(Vuesax)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes: routesArray,
 })
 
