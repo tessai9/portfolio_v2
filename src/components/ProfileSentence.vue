@@ -1,4 +1,4 @@
-<template lang="html">
+<template lang="html" functional>
   <div>
     <p>兵庫県在住のエンジニアです。</p>
     <p>

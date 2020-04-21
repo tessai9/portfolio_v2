@@ -1,4 +1,4 @@
-<template lang="html">
+<template lang="html" functional>
   <div class="centerx">
     <vs-navbar class="navBarColor" color="dark" text-color="#FFFFFF">
       <div slot="title">
