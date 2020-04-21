@@ -8,11 +8,24 @@
         <vs-card class="work_card">
           <h3 slot="header">Github</h3>
           <div slot="media">
-            <img :src="github_image" class="card_image_size" />
+            <tippy
+              :animate-fill="false"
+              placement="bottom"
+              trigger="mouseenter"
+              theme="light"
+              maxWidth="870"
+            >
+              <template v-slot:trigger>
+                <img :src="github_image" class="card_image_size" />
+              </template>
+              <span>
+                <p>直近のContribution</p>
+                <p><img src="https://grass-graph.moshimo.works/images/tessai9.png" /></p>
+              </span>
+            </tippy>
           </div>
           <div>
             <p>個人的に開発したものは全部ここにpushしてます</p>
-            <img src="https://grass-graph.moshimo.works/images/tessai9.png" />
           </div>
         </vs-card>
       </vs-col>
