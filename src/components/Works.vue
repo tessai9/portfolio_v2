@@ -11,7 +11,7 @@
             <img :src="github_image" class="card_image_size" />
           </div>
           <div>
-            <p>気になったことや個人的に開発したことをpushしています</p>
+            <p>個人的に開発したものは全部ここにpushしてます</p>
             <img src="https://grass-graph.moshimo.works/images/tessai9.png" />
           </div>
         </vs-card>

@@ -5,6 +5,7 @@ import App from "@/App.vue"
 import routesArray from "@/routes.js"
 import "vuesax/dist/vuesax.css"
 import "material-icons/iconfont/material-icons.css";
+import "@/assets/animate.css"
 
 Vue.config.productionTip = false
 
