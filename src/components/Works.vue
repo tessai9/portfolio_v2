@@ -3,9 +3,8 @@
     <vs-divider position="left"><h1>Works</h1></vs-divider>
     <vs-row vs-justify="center" vs-type="flex">
       <!-- TODO: divide each contents to store and display them by v-for loop -->
-      <!-- TODO: switch display of parts syde by side or vertical arrangement by window size -->
-      <vs-col vs-justify="center" vs-align="center" vs-w="5" offset="1">
-        <vs-card actionable class="work_card">
+      <vs-col vs-justify="center" vs-align="center" :vs-w="displayVertival ? 8 : 5" :offset="displayVertival ? 2 : 1">
+        <vs-card actionable class="work-card">
           <h3 slot="header">Github</h3>
           <div slot="media">
             <tippy
@@ -16,11 +15,11 @@
               maxWidth="870"
             >
               <template v-slot:trigger>
-                <img :src="github_image" class="card_image_size" />
+                <img :src="githubImage" class="card-image-size" />
               </template>
               <span>
                 <p>直近のContribution</p>
-                <p><img src="https://grass-graph.moshimo.works/images/tessai9.png" /></p>
+                <p><img src="https://grass-graph.moshimo.works/images/tessai9.png" class="github-contribution" /></p>
               </span>
             </tippy>
           </div>
@@ -40,11 +39,11 @@
           </div>
         </vs-card>
       </vs-col>
-      <vs-col vs-justify="center" vs-align="center" vs-w="5">
-        <vs-card actionable class="work_card">
+      <vs-col vs-justify="center" vs-align="center" :vs-w="displayVertival ? 8 : 5" :offset="displayVertival ? 2 : 1">
+        <vs-card actionable class="work-card">
           <h3 slot="header">Blog</h3>
           <div slot="media">
-            <img :src="blog_image" class="card_image_size" />
+            <img :src="blogImage" class="card-image-size" />
           </div>
           <div>
             <p>個人開発などしていく中で得た知見を記事にして公開しています</p>
@@ -63,11 +62,11 @@
           </div>
         </vs-card>
       </vs-col>
-      <vs-col vs-justify="center" vs-align="center" vs-w="5" offset="1">
-        <vs-card actionable class="work_card">
+      <vs-col vs-justify="center" vs-align="center" :vs-w="displayVertival ? 8 : 5" :offset="displayVertival ? 2 : 1">
+        <vs-card actionable class="work-card">
           <h3 slot="header">三宮.dev, 三宮.vue</h3>
           <div slot="media">
-            <img :src="community_image" class="card_image_size" />
+            <img :src="communityImage" class="card-image-size" />
           </div>
           <div>
             <p>2018年10月～ 個人的に運営しているエンジニアコミュニティです</p>
@@ -95,12 +94,12 @@
           </div>
         </vs-card>
       </vs-col>
-      <vs-col vs-justify="center" vs-align="center" vs-w="5">
-        <vs-card actionable class="work_card">
+      <vs-col vs-justify="center" vs-align="center" :vs-w="displayVertival ? 8 : 5" :offset="displayVertival ? 2 : 1">
+        <vs-card actionable class="work-card">
           <h3 slot="header">有言実GO</h3>
           <div slot="media">
             <a href="http://www.yugenjigo.work/">
-              <img :src="yugenjigo_image" class="card_image_size" />
+              <img :src="yugenjigoImage" class="card-image-size" />
             </a>
           </div>
           <div>
@@ -130,26 +129,36 @@ export default {
   name: "Works",
   data() {
     return {
-      github_image: require("@/assets/works/github.jpg"),
-      blog_image: require("@/assets/works/blog.png"),
-      community_image: require("@/assets/works/community.png"),
-      yugenjigo_image: require("@/assets/works/yugenjigo.png"),
+      githubImage: require("@/assets/works/github.jpg"),
+      blogImage: require("@/assets/works/blog.png"),
+      communityImage: require("@/assets/works/community.png"),
+      yugenjigoImage: require("@/assets/works/yugenjigo.png"),
+      displayVertival: false
     }
+  },
+  mounted() {
+    this.checkForResize()
+    window.addEventListener("resize", this.checkForResize)
   },
   methods: {
     openUrlPage(url) {
       window.open(url, "_blank")
+    },
+    checkForResize() {
+      this.displayVertival = this.$root.displayForSmartPhone()
     },
   }
 }
 </script>
 
 <style lang="css" scoped>
-.work_card {
+.work-card {
   max-width: 360px;
 }
-.card_image_size {
+.card-image-size {
   max-width: 360px;
-  /* max-height: 150px; */
+}
+.github-contribution {
+  max-width: 100vw;
 }
 </style>

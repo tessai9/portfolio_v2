@@ -24,7 +24,14 @@ const router = new VueRouter({
   routes: routesArray,
 })
 
+const SwitchDisplayWidth = 900
+
 new Vue({
   router,
   render: h => h(App),
+  methods: {
+    displayForSmartPhone() {
+      return window.innerWidth < SwitchDisplayWidth
+    }
+  }
 }).$mount("#app")

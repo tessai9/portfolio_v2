@@ -2,12 +2,15 @@
   <div>
     <vs-divider position="left"><h1>Profile</h1></vs-divider>
     <!-- TODO: switch display of parts syde by side or vertical arrangement by window size -->
-    <vs-row vs-type="flex" vs-justify="center" vs-align="center" class="profile_component">
-      <vs-col vs-w="6" vs-justify="center">
+    <vs-row vs-type="flex" vs-justify="center" vs-align="center" class="profile-component">
+      <vs-col v-if="displayVertical" class="profile-image-col" vs-offset="2" vs-justify="center" vs-w="8">
+        <vs-image class="profile-image" :src="myProfileImage" hever="zoom"></vs-image>
+      </vs-col>
+      <vs-col :vs-w="displayVertical ? 8 : 6" :vs-offset="displayVertical ? 2 : 0" :class="{ profile_text_vertical : displayVertical }" vs-justify="center">
         <ProfileSentence />
       </vs-col>
-      <vs-col class="profile_image_col" vs-offset="1" vs-justify="center" vs-w="2">
-        <vs-image class="profile_image" :src="myProfileImage" hever="zoom"></vs-image>
+      <vs-col v-if="!displayVertical" class="profile-image-col" vs-offset="1" vs-justify="center" vs-w="2">
+        <vs-image class="profile-image" :src="myProfileImage" hever="zoom"></vs-image>
       </vs-col>
     </vs-row>
     <vs-divider position="left"><h1>Mainly Skills</h1></vs-divider>
@@ -17,10 +20,10 @@
         <SkillList
           :key="index"
           v-for="(category, index) in skillCategories"
-          :category_name="category"
-          :color_name="skills[category].color_name"
-          :icon_name="skills[category].icon_name"
-          :tech_list="skills[category].techs"
+          :categoryName="category"
+          :colorName="skills[category].color_name"
+          :iconName="skills[category].icon_name"
+          :techList="skills[category].techs"
         />
       </vs-col>
       <vs-col vs-w="2"></vs-col>
@@ -33,16 +36,24 @@ import ProfileSentence from "@/components/ProfileSentence.vue"
 import SkillList from "@/components/SkillList.vue"
 import SkillsStore from "@/SkillsStore.js"
 
-const profImg = require("@/assets/profile_imgage.jpg")
-
 export default {
   name: "Home",
   data() {
     return {
-      myProfileImage: profImg,
+      myProfileImage: require("@/assets/profile_imgage.jpg"),
       skills: SkillsStore,
       skillCategories: Object.keys(SkillsStore),
+      displayVertical: false,
     }
+  },
+  mounted() {
+    this.checkForResize()
+    window.addEventListener("resize", this.checkForResize)
+  },
+  methods: {
+    checkForResize() {
+      this.displayVertical = this.$root.displayForSmartPhone();
+    },
   },
   components: {
     ProfileSentence,
@@ -52,16 +63,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.profile_component {
+.profile-component {
   margin-top: 2rem;
 }
-
-.profile_image_col {
+.profile-image-col {
   min-height: 250px;
 }
-
-.profile_image {
+.profile-image {
   width: 100%;
   max-width: 350px;
+}
+.profile_text_vertical {
+  margin-top: 1rem;
 }
 </style>
