@@ -10,7 +10,7 @@
         enter-active-class="animated slideInRight"
         :key="index"
         v-for="(tech_name, index) in tech_list"
-        :duration="1000 + (index * 100)"
+        :duration="1000"
         appear
       >
         <vs-list-item

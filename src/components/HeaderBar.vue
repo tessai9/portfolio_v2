@@ -10,8 +10,11 @@
       <vs-navbar-item index="0">
         <router-link :to="{ name: 'home' }">Home</router-link>
       </vs-navbar-item>
-      <vs-navbar-item index="2">
+      <vs-navbar-item index="1">
         <router-link :to="{ name: 'works' }">Works</router-link>
+      </vs-navbar-item>
+      <vs-navbar-item index="2">
+        <vs-icon icon="email" size="small" style="vertical-align: middle; margin-right: 0.3rem;"></vs-icon>
       </vs-navbar-item>
     </vs-navbar>
   </div>
