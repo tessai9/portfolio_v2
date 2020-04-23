@@ -3,12 +3,12 @@ import Works from "@/components/Works.vue"
 
 let routes = [
   {
-    path: "/",
+    path: "/portfolio_v2",
     name: "home",
     component: Home
   },
   {
-    path: "/works",
+    path: "/portfolio_v2/works",
     name: "works",
     component: Works
   },

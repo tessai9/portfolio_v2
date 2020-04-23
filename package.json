@@ -56,5 +56,8 @@
   ],
   "_id": "portfolio_v2@1.0.0",
   "license": "MIT",
-  "readme": "ERROR: No README data found!"
+  "readme": "ERROR: No README data found!",
+  "vue": {
+    "publicPath": "/portfolio_v2/"
+  }
 }
