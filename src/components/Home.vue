@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
+    <!-- Profile about me -->
     <vs-divider position="left"><h1>Profile</h1></vs-divider>
-    <!-- TODO: switch display of parts syde by side or vertical arrangement by window size -->
     <vs-row vs-type="flex" vs-justify="center" vs-align="center" class="profile-component">
       <vs-col v-if="displayVertical" class="profile-image-col" vs-offset="2" vs-justify="center" vs-w="8">
         <vs-image class="profile-image" :src="myProfileImage" hever="zoom"></vs-image>
@@ -13,6 +13,7 @@
         <vs-image class="profile-image" :src="myProfileImage" hever="zoom"></vs-image>
       </vs-col>
     </vs-row>
+    <!-- My mainly skills -->
     <vs-divider position="left"><h1>Mainly Skills</h1></vs-divider>
     <vs-row>
       <vs-col vs-w="2"></vs-col>
