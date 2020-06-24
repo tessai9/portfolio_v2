@@ -13,6 +13,7 @@ export default {
     techs: [
       "Ruby",
       "PHP",
+      "C#",
       "Ruby on Rails",
       "Symfony",
       "ASP.NET",
