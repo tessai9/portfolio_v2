@@ -1,5 +1,5 @@
 <template lang="html" functional>
-  <div>
+  <div id="profile-sentence">
     <p>兵庫県在住のエンジニアです。</p>
     <p>
       医療機関向けの自社製システムを開発・販売する会社を経て、<br>
@@ -25,4 +25,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#profile-sentence {
+}
 </style>

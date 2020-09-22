@@ -6,7 +6,7 @@ import App from "@/App.vue"
 import routesArray from "@/routes.js"
 import "vuesax/dist/vuesax.css"
 import "material-icons/iconfont/material-icons.css";
-import "@/assets/animate.css"
+import "animate.css"
 import "tippy.js/themes/light.css";
 import "tippy.js/themes/light-border.css";
 import "tippy.js/themes/google.css";

@@ -3,7 +3,7 @@
     <vs-navbar class="nav-bar-color" color="dark" text-color="#FFFFFF">
       <div slot="title">
         <vs-navbar-title>
-          Portfolio
+          <router-link :to="{ name: 'home' }">Portfolio</router-link>
         </vs-navbar-title>
       </div>
 

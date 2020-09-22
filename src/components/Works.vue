@@ -121,10 +121,13 @@
         </vs-card>
       </vs-col>
     </vs-row>
+    <BackgroundVideo />
   </div>
 </template>
 
 <script>
+import BackgroundVideo from "@/components/BackgroundVideo.vue"
+
 export default {
   name: "Works",
   data() {
@@ -147,6 +150,9 @@ export default {
     checkForResize() {
       this.displayVertival = this.$root.displayForSmartPhone()
     },
+  },
+  components: {
+    BackgroundVideo,
   }
 }
 </script>

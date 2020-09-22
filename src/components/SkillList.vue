@@ -1,23 +1,23 @@
 <template lang="html">
-    <vs-list>
-      <vs-list-header
-        :title="categoryName"
-        :color="colorName"
-        :icon="iconName"
-        class="skill-category"
-      ></vs-list-header>
-      <transition
-        enter-active-class="animated slideInRight"
-        :key="index"
-        v-for="(techName, index) in techList"
-        :duration="1000"
-        appear
-      >
-        <vs-list-item
-          :title="techName"
-        ></vs-list-item>
+  <vs-list>
+    <vs-list-header
+      :title="categoryName"
+      :color="colorName"
+      :icon="iconName"
+      class="skill-category"
+    ></vs-list-header>
+    <transition
+      enter-active-class="animated slideInRight"
+      :key="index"
+      v-for="(techName, index) in techList"
+      :duration="1000"
+      appear
+    >
+      <vs-list-item
+        :title="techName"
+      ></vs-list-item>
     </transition>
-    </vs-list>
+  </vs-list>
 </template>
 
 <script>

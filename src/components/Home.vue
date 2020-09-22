@@ -29,6 +29,7 @@
       </vs-col>
       <vs-col vs-w="2"></vs-col>
     </vs-row>
+    <BackgroundVideo />
   </div>
 </template>
 
@@ -36,6 +37,7 @@
 import ProfileSentence from "@/components/ProfileSentence.vue"
 import SkillList from "@/components/SkillList.vue"
 import SkillsStore from "@/SkillsStore.js"
+import BackgroundVideo from "@/components/BackgroundVideo.vue"
 
 export default {
   name: "Home",
@@ -59,6 +61,7 @@ export default {
   components: {
     ProfileSentence,
     SkillList,
+    BackgroundVideo,
   },
 }
 </script>
