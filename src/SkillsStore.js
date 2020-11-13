@@ -33,6 +33,7 @@ export default {
     techs: [
       "Docker",
       "Heroku",
+      "AWS (EC2, ECS, RDS)"
     ],
   },
 }
