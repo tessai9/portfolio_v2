@@ -14,9 +14,11 @@ export default {
       "Ruby",
       "PHP",
       "C#",
+      "Kotlin",
       "Ruby on Rails",
       "Symfony",
-      "ASP.NET",
+      "Laravel",
+      "Spring Boot",
     ],
   },
   LowLevel: {
