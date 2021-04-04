@@ -64,14 +64,13 @@
       </vs-col>
       <vs-col vs-justify="center" vs-align="center" :vs-w="displayVertival ? 8 : 5" :offset="displayVertival ? 2 : 1">
         <vs-card actionable class="work-card">
-          <h3 slot="header">三宮.dev, 三宮.vue</h3>
+          <h3 slot="header">三宮.dev</h3>
           <div slot="media">
             <img :src="communityImage" class="card-image-size" />
           </div>
           <div>
             <p>2018年10月～ 個人的に運営しているエンジニアコミュニティです</p>
             <p>月一回ペースで Offline / Online の勉強会を開催しています</p>
-            <p>また、姉妹コミュニティである三宮.vueのお手伝いもしています</p>
           </div>
           <div slot="footer">
             <vs-row vs-justify="flex-end">
@@ -81,14 +80,7 @@
                 type="gradient"
                 style="margin-right: 0.5rem;"
               >
-                View 三宮.dev
-              </vs-button>
-              <vs-button
-                @click="openUrlPage('https://kobe-sannomiya-vue.connpass.com/')"
-                color="primary"
-                type="gradient"
-              >
-                View 三宮.vue
+                View
               </vs-button>
             </vs-row>
           </div>
