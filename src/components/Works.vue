@@ -96,15 +96,15 @@
           </div>
           <div>
             <p>個人で開発したWebアプリです</p>
-            <p>Herokuのfreeプランで運用しているため、初回アクセス時は読み込みが長いですが利用可能です</p>
             <p>Ruby on Rails + Vue.js で出来ています</p>
+            <p style="font-weight: bold; font-size: 1.1rem;">もうメンテしてないので閉鎖しました</p>
           </div>
           <div slot="footer">
             <vs-row vs-justify="flex-end">
               <vs-button
-                @click="openUrlPage('http://www.yugenjigo.work/')"
                 color="danger"
                 type="gradient"
+                disabled
               >
                 View
               </vs-button>
