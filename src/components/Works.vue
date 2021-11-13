@@ -19,7 +19,7 @@
               </template>
               <span>
                 <p>直近のContribution</p>
-                <p><img src="https://grass-graph.moshimo.works/images/tessai9.png" class="github-contribution" /></p>
+                <p><img src="https://grass-graph.appspot.com/images/tessai9.png" class="github-contribution" /></p>
               </span>
             </tippy>
           </div>
